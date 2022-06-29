@@ -41,7 +41,7 @@ on:
         type: string
       default_string:
         description: "default string"
-        required: true
+        required: false
         default: string
         type: string
 
@@ -56,3 +56,5 @@ jobs:
       - run: echo ${{ github.event.inputs.default_false }}
       - run: echo ${{ github.event.inputs.required_string }}
       - run: echo ${{ github.event.inputs.default_string }}
+      - run: echo "Skip?"
+        if: ${{ default_true == 'true' }}
