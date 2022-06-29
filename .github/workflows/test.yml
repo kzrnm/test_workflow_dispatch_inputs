@@ -29,20 +29,23 @@ on:
         type: boolean
       default_true:
         description: "default true"
-        required: true
+        required: false
+        default: true
         type: boolean
       default_false:
         description: "default false"
         required: false
+        default: false
         type: boolean
       required_string:
         description: "required string"
         required: true
+        default: string
         type: string
       default_string:
         description: "default string"
         required: false
-        default: string
+        default: defstring
         type: string
 
 jobs:
