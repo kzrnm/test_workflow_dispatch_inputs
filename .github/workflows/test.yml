@@ -1,0 +1,58 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+    inputs:
+      required_choice:
+        description: "default_choice"
+        required: true
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
+      default_choice:
+        description: "default_choice"
+        required: false
+        default: warning
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
+      required_boolean:
+        description: "required boolean"
+        required: true
+        type: boolean
+      default_true:
+        description: "default true"
+        required: false
+        type: boolean
+      default_false:
+        description: "default false"
+        required: false
+        type: boolean
+      required_string:
+        description: "required string"
+        required: true
+        type: string
+      default_string:
+        description: "default string"
+        required: true
+        default: string
+        type: string
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo {{ github.event.inputs.required_choice }}
+      - run: echo {{ github.event.inputs.default_choice }}
+      - run: echo {{ github.event.inputs.required_boolean }}
+      - run: echo {{ github.event.inputs.default_true }}
+      - run: echo {{ github.event.inputs.default_false }}
+      - run: echo {{ github.event.inputs.required_string }}
+      - run: echo {{ github.event.inputs.default_string }}
