@@ -56,5 +56,7 @@ jobs:
       - run: echo ${{ github.event.inputs.default_false }}
       - run: echo ${{ github.event.inputs.required_string }}
       - run: echo ${{ github.event.inputs.default_string }}
-      - run: echo "Skip?"
-        if: ${{ github.event.inputs.default_true == 'true' }}
+      - run: echo "default_true is true?"
+        if: ${{ github.event.inputs.default_true == true }}
+      - run: echo "default_true is not true?"
+        if: ${{ github.event.inputs.default_true != true }}
