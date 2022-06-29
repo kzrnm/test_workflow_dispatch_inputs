@@ -49,10 +49,10 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - run: echo {{ github.event.inputs.required_choice }}
-      - run: echo {{ github.event.inputs.default_choice }}
-      - run: echo {{ github.event.inputs.required_boolean }}
-      - run: echo {{ github.event.inputs.default_true }}
-      - run: echo {{ github.event.inputs.default_false }}
-      - run: echo {{ github.event.inputs.required_string }}
-      - run: echo {{ github.event.inputs.default_string }}
+      - run: echo ${{ github.event.inputs.required_choice }}
+      - run: echo ${{ github.event.inputs.default_choice }}
+      - run: echo ${{ github.event.inputs.required_boolean }}
+      - run: echo ${{ github.event.inputs.default_true }}
+      - run: echo ${{ github.event.inputs.default_false }}
+      - run: echo ${{ github.event.inputs.required_string }}
+      - run: echo ${{ github.event.inputs.default_string }}
